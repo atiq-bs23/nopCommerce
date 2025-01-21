@@ -39,9 +39,10 @@ public class InventoryBalanceMigration : MigrationBase
             Alter.Table(nameof(ZettleRecord)).AddColumn(nameof(ZettleRecord.ExternalUuid)).AsString().Nullable();
 
         //delete settings
-        var setting = await _settingService.GetSettingAsync($"{nameof(ZettleSettings)}.InventoryTrackingIds");
-        if(setting is not null)
-            await _settingService.DeleteSettingAsync(setting);
+        var setting = _settingService.GetSetting($"{nameof(ZettleSettings)}.InventoryTrackingIds");
+        if (setting is null)
+            return;
+        _settingService.DeleteSetting(setting);
     }
 
     /// <summary>
