@@ -9,7 +9,7 @@ public partial class CapturePaymentResult
 {
     public CapturePaymentResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

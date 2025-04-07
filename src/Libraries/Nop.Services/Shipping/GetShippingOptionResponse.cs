@@ -1,4 +1,4 @@
-using Nop.Core.Domain.Shipping;
+﻿using Nop.Core.Domain.Shipping;
 
 namespace Nop.Services.Shipping;
 
@@ -9,8 +9,8 @@ public partial class GetShippingOptionResponse
 {
     public GetShippingOptionResponse()
     {
-        Errors = new List<string>();
-        ShippingOptions = new List<ShippingOption>();
+        Errors = [];
+        ShippingOptions = [];
     }
 
     /// <summary>

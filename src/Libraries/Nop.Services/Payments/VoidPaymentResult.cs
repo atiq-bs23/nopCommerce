@@ -9,7 +9,7 @@ public partial class VoidPaymentResult
 {
     public VoidPaymentResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

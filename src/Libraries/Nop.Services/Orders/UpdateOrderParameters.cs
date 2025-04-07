@@ -71,7 +71,7 @@ public partial class UpdateOrderParameters
     /// <summary>
     /// Warnings
     /// </summary>
-    public List<string> Warnings { get; } = new List<string>();
+    public List<string> Warnings { get; } = [];
 
     /// <summary>
     /// Applied discounts

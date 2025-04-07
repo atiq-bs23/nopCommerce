@@ -48,7 +48,7 @@ public partial class PluginsInfo : IPluginsInfo
             //if not, try to parse the file that was used in previous nopCommerce versions
             filePath = _fileProvider.MapPath(NopPluginDefaults.ObsoleteInstalledPluginsFilePath);
             if (!_fileProvider.FileExists(filePath))
-                return new List<string>();
+                return [];
 
             //get plugin system names from the old txt file
             var pluginSystemNames = new List<string>();
@@ -68,7 +68,7 @@ public partial class PluginsInfo : IPluginsInfo
 
         var text = _fileProvider.ReadAllText(filePath, Encoding.UTF8);
         if (string.IsNullOrEmpty(text))
-            return new List<string>();
+            return [];
 
         //delete the old file
         _fileProvider.DeleteFile(filePath);
@@ -316,8 +316,8 @@ public partial class PluginsInfo : IPluginsInfo
     public virtual void CopyFrom(IPluginsInfo pluginsInfo)
     {
         InstalledPlugins = pluginsInfo.InstalledPlugins?.ToList() ?? new List<PluginDescriptorBaseInfo>();
-        PluginNamesToUninstall = pluginsInfo.PluginNamesToUninstall?.ToList() ?? new List<string>();
-        PluginNamesToDelete = pluginsInfo.PluginNamesToDelete?.ToList() ?? new List<string>();
+        PluginNamesToUninstall = pluginsInfo.PluginNamesToUninstall?.ToList() ?? [];
+        PluginNamesToDelete = pluginsInfo.PluginNamesToDelete?.ToList() ?? [];
         PluginNamesToInstall = pluginsInfo.PluginNamesToInstall?.ToList() ??
                                new List<(string SystemName, Guid? CustomerGuid)>();
         AssemblyLoadedCollision = pluginsInfo.AssemblyLoadedCollision?.ToList();
@@ -376,18 +376,17 @@ public partial class PluginsInfo : IPluginsInfo
     /// <summary>
     /// Gets or sets the list of plugin names which will be uninstalled
     /// </summary>
-    public virtual IList<string> PluginNamesToUninstall { get; set; } = new List<string>();
+    public virtual IList<string> PluginNamesToUninstall { get; set; } = [];
 
     /// <summary>
     /// Gets or sets the list of plugin names which will be deleted
     /// </summary>
-    public virtual IList<string> PluginNamesToDelete { get; set; } = new List<string>();
+    public virtual IList<string> PluginNamesToDelete { get; set; } = [];
 
     /// <summary>
     /// Gets or sets the list of plugin names which will be installed
     /// </summary>
-    public virtual IList<(string SystemName, Guid? CustomerGuid)> PluginNamesToInstall { get; set; } =
-        new List<(string SystemName, Guid? CustomerGuid)>();
+    public virtual IList<(string SystemName, Guid? CustomerGuid)> PluginNamesToInstall { get; set; } = [];
 
 
     /// <summary>

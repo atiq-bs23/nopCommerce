@@ -15,10 +15,10 @@ public partial class PluginDescriptor : PluginDescriptorBaseInfo, IDescriptor, I
 
     public PluginDescriptor()
     {
-        SupportedVersions = new List<string>();
-        LimitedToStores = new List<int>();
-        LimitedToCustomerRoles = new List<int>();
-        DependsOn = new List<string>();
+        SupportedVersions = [];
+        LimitedToStores = [];
+        LimitedToCustomerRoles = [];
+        DependsOn = [];
     }
 
     #endregion

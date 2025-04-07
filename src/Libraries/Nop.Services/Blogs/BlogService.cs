@@ -250,7 +250,7 @@ public partial class BlogService : IBlogService
         ArgumentNullException.ThrowIfNull(blogPost);
 
         if (blogPost.Tags == null)
-            return new List<string>();
+            return [];
 
         var tags = await blogPost.Tags.Split(_separator, StringSplitOptions.RemoveEmptyEntries)
             .Select(tag => tag.Trim())

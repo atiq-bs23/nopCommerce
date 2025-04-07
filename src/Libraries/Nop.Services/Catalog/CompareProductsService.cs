@@ -49,12 +49,12 @@ public partial class CompareProductsService : ICompareProductsService
     {
         var httpContext = _httpContextAccessor.HttpContext;
         if (httpContext?.Request == null)
-            return new List<int>();
+            return [];
 
         //try to get cookie
         var cookieName = $"{NopCookieDefaults.Prefix}{NopCookieDefaults.ComparedProductsCookie}";
         if (!httpContext.Request.Cookies.TryGetValue(cookieName, out var productIdsCookie) || string.IsNullOrEmpty(productIdsCookie))
-            return new List<int>();
+            return [];
 
         //get array of string product identifiers from cookie
         var productIds = productIdsCookie.Split(_separator, StringSplitOptions.RemoveEmptyEntries);

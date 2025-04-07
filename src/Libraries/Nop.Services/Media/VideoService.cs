@@ -53,7 +53,7 @@ public partial class VideoService : IVideoService
     public virtual async Task<IList<Video>> GetVideosByProductIdAsync(int productId)
     {
         if (productId == 0)
-            return new List<Video>();
+            return [];
 
         var query = from v in _videoRepository.Table
             join pv in _productVideoRepository.Table on v.Id equals pv.VideoId

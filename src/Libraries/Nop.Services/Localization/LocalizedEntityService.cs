@@ -48,7 +48,7 @@ public partial class LocalizedEntityService : ILocalizedEntityService
     protected virtual async Task<IList<LocalizedProperty>> GetLocalizedPropertiesAsync(int entityId, string localeKeyGroup)
     {
         if (entityId == 0 || string.IsNullOrEmpty(localeKeyGroup))
-            return new List<LocalizedProperty>();
+            return [];
 
         var query = from lp in _localizedPropertyRepository.Table
             orderby lp.Id

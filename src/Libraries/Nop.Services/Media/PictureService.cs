@@ -859,7 +859,7 @@ public partial class PictureService : IPictureService
     public virtual async Task<IList<Picture>> GetPicturesByProductIdAsync(int productId, int recordsToReturn = 0)
     {
         if (productId == 0)
-            return new List<Picture>();
+            return [];
 
         var query = from p in _pictureRepository.Table
                     join pp in _productPictureRepository.Table on p.Id equals pp.PictureId

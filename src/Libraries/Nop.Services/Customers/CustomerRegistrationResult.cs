@@ -7,7 +7,7 @@ public partial class CustomerRegistrationResult
 {
     public CustomerRegistrationResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

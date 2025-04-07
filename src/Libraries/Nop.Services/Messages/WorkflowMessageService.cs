@@ -109,8 +109,8 @@ public partial class WorkflowMessageService : IWorkflowMessageService
         var messageTemplates = await _messageTemplateService.GetMessageTemplatesByNameAsync(messageTemplateName, storeId);
 
         //no template found
-        if (!messageTemplates?.Any() ?? true)
-            return new List<MessageTemplate>();
+        if (!messageTemplates.Any())
+            return [];
 
         //filter active templates
         messageTemplates = messageTemplates.Where(messageTemplate => messageTemplate.IsActive).ToList();
@@ -246,7 +246,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.CUSTOMER_FAILED_LOGIN_ATTEMPT_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -288,7 +288,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.CUSTOMER_REGISTERED_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -332,7 +332,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.CUSTOMER_WELCOME_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -374,7 +374,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.CUSTOMER_EMAIL_VALIDATION_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -416,7 +416,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.CUSTOMER_EMAIL_REVALIDATION_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -459,7 +459,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.CUSTOMER_PASSWORD_RECOVERY_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -501,7 +501,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.DELETE_CUSTOMER_REQUEST_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -551,7 +551,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_PLACED_VENDOR_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -594,7 +594,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_PLACED_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -642,7 +642,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_PLACED_AFFILIATE_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -686,7 +686,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_PAID_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -734,7 +734,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_PAID_AFFILIATE_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -781,7 +781,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_PAID_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -830,7 +830,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_PAID_VENDOR_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -876,7 +876,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_PLACED_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -924,7 +924,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.SHIPMENT_SENT_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -970,7 +970,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.SHIPMENT_READY_FOR_PICKUP_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1018,7 +1018,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.SHIPMENT_DELIVERED_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1067,7 +1067,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_PROCESSING_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1116,7 +1116,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_COMPLETED_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1162,7 +1162,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_COMPLETED_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1206,7 +1206,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_CANCELLED_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1254,7 +1254,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_CANCELLED_VENDOR_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1298,7 +1298,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_REFUNDED_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1344,7 +1344,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.ORDER_REFUNDED_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1392,7 +1392,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEW_ORDER_NOTE_ADDED_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1440,7 +1440,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.RECURRING_PAYMENT_CANCELLED_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1487,7 +1487,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.RECURRING_PAYMENT_CANCELLED_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1535,7 +1535,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.RECURRING_PAYMENT_FAILED_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1584,7 +1584,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEWSLETTER_SUBSCRIPTION_ACTIVATION_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1622,7 +1622,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEWSLETTER_SUBSCRIPTION_DEACTIVATION_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1672,7 +1672,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.EMAIL_A_FRIEND_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1718,7 +1718,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.WISHLIST_TO_FRIEND_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1769,7 +1769,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEW_RETURN_REQUEST_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1819,7 +1819,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEW_RETURN_REQUEST_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         var customer = await _customerService.GetCustomerByIdAsync(returnRequest.CustomerId);
 
@@ -1876,7 +1876,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.RETURN_REQUEST_STATUS_CHANGED_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         var customer = await _customerService.GetCustomerByIdAsync(returnRequest.CustomerId);
 
@@ -1933,7 +1933,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEW_FORUM_TOPIC_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -1981,7 +1981,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEW_FORUM_POST_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -2025,7 +2025,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.PRIVATE_MESSAGE_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -2076,7 +2076,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEW_VENDOR_ACCOUNT_APPLY_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -2123,7 +2123,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.VENDOR_INFORMATION_CHANGE_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -2172,7 +2172,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.GIFT_CARD_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -2214,7 +2214,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.PRODUCT_REVIEW_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -2260,17 +2260,17 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.PRODUCT_REVIEW_REPLY_CUSTOMER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         var customer = await _customerService.GetCustomerByIdAsync(productReview.CustomerId);
 
         //We should not send notifications to guests
         if (await _customerService.IsGuestAsync(customer))
-            return new List<int>();
+            return [];
 
         //We should not send notifications to guests
         if (await _customerService.IsGuestAsync(customer))
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -2313,7 +2313,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.QUANTITY_BELOW_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         var commonTokens = new List<Token>();
         await _messageTokenProvider.AddProductTokensAsync(commonTokens, product, languageId);
@@ -2353,7 +2353,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.QUANTITY_BELOW_ATTRIBUTE_COMBINATION_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         var commonTokens = new List<Token>();
         var product = await _productService.GetProductByIdAsync(combination.ProductId);
@@ -2398,7 +2398,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.QUANTITY_BELOW_VENDOR_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         var commonTokens = new List<Token>();
         await _messageTokenProvider.AddProductTokensAsync(commonTokens, product, languageId);
@@ -2441,7 +2441,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.QUANTITY_BELOW_ATTRIBUTE_COMBINATION_VENDOR_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         var commonTokens = new List<Token>();
         var product = await _productService.GetProductByIdAsync(combination.ProductId);
@@ -2488,7 +2488,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEW_VAT_SUBMITTED_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -2532,7 +2532,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.BLOG_COMMENT_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         var customer = await _customerService.GetCustomerByIdAsync(blogComment.CustomerId);
 
@@ -2578,7 +2578,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.NEWS_COMMENT_STORE_OWNER_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         var customer = await _customerService.GetCustomerByIdAsync(newsComment.CustomerId);
 
@@ -2625,14 +2625,14 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         //ensure that customer is registered (simple and fast way)
         if (!CommonHelper.IsValidEmail(customer.Email))
-            return new List<int>();
+            return [];
 
         var store = await _storeService.GetStoreByIdAsync(subscription.StoreId) ?? await _storeContext.GetCurrentStoreAsync();
         languageId = await EnsureLanguageIsActiveAsync(languageId, store.Id);
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.BACK_IN_STOCK_NOTIFICATION, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>();
@@ -2677,7 +2677,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.CONTACT_US_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>
@@ -2749,7 +2749,7 @@ public partial class WorkflowMessageService : IWorkflowMessageService
 
         var messageTemplates = await GetActiveMessageTemplatesAsync(MessageTemplateSystemNames.CONTACT_VENDOR_MESSAGE, store.Id);
         if (!messageTemplates.Any())
-            return new List<int>();
+            return [];
 
         //tokens
         var commonTokens = new List<Token>

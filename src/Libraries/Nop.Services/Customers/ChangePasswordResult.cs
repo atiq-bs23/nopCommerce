@@ -7,7 +7,7 @@ public partial class ChangePasswordResult
 {
     public ChangePasswordResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

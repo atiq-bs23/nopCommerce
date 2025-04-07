@@ -9,7 +9,7 @@ public partial class PlaceOrderResult
 {
     public PlaceOrderResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

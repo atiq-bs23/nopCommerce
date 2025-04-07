@@ -707,7 +707,7 @@ public partial class ExportManager : IExportManager
 
                 //validation rules
                 if (!pam.ValidationRulesAllowed())
-                    return new List<ExportProductAttribute> { attribute };
+                    return [attribute];
 
                 attribute.ValidationMinLength = pam.ValidationMinLength;
                 attribute.ValidationMaxLength = pam.ValidationMaxLength;

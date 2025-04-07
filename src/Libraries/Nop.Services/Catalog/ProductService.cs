@@ -494,7 +494,7 @@ public partial class ProductService : IProductService
     protected virtual async Task<IList<CrossSellProduct>> GetCrossSellProductsByProductIdsAsync(int[] productIds, bool showHidden = false)
     {
         if (productIds == null || productIds.Length == 0)
-            return new List<CrossSellProduct>();
+            return [];
 
         var query = from csp in _crossSellProductRepository.Table
             join p in _productRepository.Table on csp.ProductId2 equals p.Id

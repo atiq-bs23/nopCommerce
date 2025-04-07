@@ -7,7 +7,7 @@ public partial class TaxRateResult
 {
     public TaxRateResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

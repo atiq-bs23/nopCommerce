@@ -7,7 +7,7 @@ public partial class CancelRecurringPaymentResult
 {
     public CancelRecurringPaymentResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

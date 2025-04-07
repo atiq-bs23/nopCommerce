@@ -214,7 +214,7 @@ public partial class AttributeParser<TAttribute, TAttributeValue> : IAttributePa
 
             var nodeList1 = xmlDoc.SelectNodes(@$"//Attributes/{_attributeName}");
             if (nodeList1 == null)
-                return new List<string>();
+                return [];
 
             foreach (XmlNode node1 in nodeList1)
             {

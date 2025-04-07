@@ -9,8 +9,8 @@ public partial class GetPickupPointsResponse
 {
     public GetPickupPointsResponse()
     {
-        Errors = new List<string>();
-        PickupPoints = new List<PickupPoint>();
+        Errors = [];
+        PickupPoints = [];
     }
 
     /// <summary>

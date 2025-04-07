@@ -1976,7 +1976,7 @@ public partial class OrderProcessingService : IOrderProcessingService
 
                 await _orderService.UpdateRecurringPaymentAsync(recurringPayment);
 
-                return new List<string>();
+                return [];
             }
 
             //log errors

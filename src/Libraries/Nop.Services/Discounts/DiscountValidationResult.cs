@@ -7,7 +7,7 @@ public partial class DiscountValidationResult
 {
     public DiscountValidationResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

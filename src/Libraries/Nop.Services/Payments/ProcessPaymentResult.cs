@@ -9,7 +9,7 @@ public partial class ProcessPaymentResult
 {
     public ProcessPaymentResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

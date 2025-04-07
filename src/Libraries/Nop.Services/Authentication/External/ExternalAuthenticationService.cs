@@ -229,7 +229,7 @@ public partial class ExternalAuthenticationService : IExternalAuthenticationServ
 
         if (session != null)
         {
-            var existsErrors = (await session.GetAsync<IList<string>>(NopAuthenticationDefaults.ExternalAuthenticationErrorsSessionKey))?.ToList() ?? new List<string>();
+            var existsErrors = (await session.GetAsync<IList<string>>(NopAuthenticationDefaults.ExternalAuthenticationErrorsSessionKey))?.ToList() ?? [];
 
             existsErrors.AddRange(errors);
 

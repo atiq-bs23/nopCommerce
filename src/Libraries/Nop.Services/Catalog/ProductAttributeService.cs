@@ -471,7 +471,7 @@ public partial class ProductAttributeService : IProductAttributeService
     public virtual async Task<IList<ProductAttributeCombination>> GetAllProductAttributeCombinationsAsync(int productId)
     {
         if (productId == 0)
-            return new List<ProductAttributeCombination>();
+            return [];
 
         var combinations = await _productAttributeCombinationRepository.GetAllAsync(query =>
         {

@@ -236,7 +236,7 @@ public partial class ManufacturerService : IManufacturerService
     public virtual async Task<IList<Manufacturer>> GetManufacturersByCategoryIdAsync(int categoryId)
     {
         if (categoryId <= 0)
-            return new List<Manufacturer>();
+            return [];
 
         // get available products in category
         var productsQuery =
@@ -390,7 +390,7 @@ public partial class ManufacturerService : IManufacturerService
         bool showHidden = false)
     {
         if (productId == 0)
-            return new List<ProductManufacturer>();
+            return [];
 
         var store = await _storeContext.GetCurrentStoreAsync();
         var customer = await _workContext.GetCurrentCustomerAsync();

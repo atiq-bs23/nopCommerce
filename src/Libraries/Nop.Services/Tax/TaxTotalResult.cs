@@ -9,8 +9,8 @@ public partial class TaxTotalResult
 
     public TaxTotalResult()
     {
-        TaxRates = new SortedDictionary<decimal, decimal>();
-        Errors = new List<string>();
+        TaxRates = [];
+        Errors = [];
     }
 
     #endregion

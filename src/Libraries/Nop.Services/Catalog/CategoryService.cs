@@ -82,7 +82,7 @@ public partial class CategoryService : ICategoryService
         bool showHidden = false)
     {
         if (productId == 0)
-            return new List<ProductCategory>();
+            return [];
 
         var customer = await _workContext.GetCurrentCustomerAsync();
         var customerRoleIds = await _customerService.GetCustomerRoleIdsAsync(customer);

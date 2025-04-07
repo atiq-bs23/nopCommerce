@@ -9,7 +9,7 @@ public partial class RefundPaymentResult
 {
     public RefundPaymentResult()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     /// <summary>

@@ -432,7 +432,7 @@ public partial class SpecificationAttributeService : ISpecificationAttributeServ
     public virtual async Task<IList<SpecificationAttributeOption>> GetFiltrableSpecificationAttributeOptionsByCategoryIdAsync(int categoryId)
     {
         if (categoryId <= 0)
-            return new List<SpecificationAttributeOption>();
+            return [];
 
         var productsQuery = await GetAvailableProductsQueryAsync();
 
@@ -481,7 +481,7 @@ public partial class SpecificationAttributeService : ISpecificationAttributeServ
     public virtual async Task<IList<SpecificationAttributeOption>> GetFiltrableSpecificationAttributeOptionsByManufacturerIdAsync(int manufacturerId)
     {
         if (manufacturerId <= 0)
-            return new List<SpecificationAttributeOption>();
+            return [];
 
         var productsQuery = await GetAvailableProductsQueryAsync();
 
