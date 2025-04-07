@@ -9,7 +9,7 @@ public partial class CommonSettings : ISettings
 {
     public CommonSettings()
     {
-        IgnoreLogWordlist = new List<string>();
+        IgnoreLogWordlist = [];
     }
 
     /// <summary>

@@ -11,7 +11,7 @@ public partial class MultiFactorAuthenticationSettings : ISettings
 
     public MultiFactorAuthenticationSettings()
     {
-        ActiveAuthenticationMethodSystemNames = new List<string>();
+        ActiveAuthenticationMethodSystemNames = [];
     }
 
     #endregion

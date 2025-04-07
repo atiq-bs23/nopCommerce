@@ -12,7 +12,7 @@ public static partial class NameCompatibilityManager
 
     private static readonly Dictionary<Type, string> _tableNames = new();
     private static readonly Dictionary<(Type, string), string> _columnName = new();
-    private static readonly IList<Type> _loadedFor = new List<Type>();
+    private static readonly IList<Type> _loadedFor = [];
     private static bool _isInitialized;
     private static readonly ReaderWriterLockSlim _locker = new();
 
@@ -90,5 +90,5 @@ public static partial class NameCompatibilityManager
     /// <summary>
     /// Additional name compatibility types
     /// </summary>
-    public static List<Type> AdditionalNameCompatibilities { get; } = new List<Type>();
+    public static List<Type> AdditionalNameCompatibilities { get; } = [];
 }

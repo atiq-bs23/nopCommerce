@@ -9,7 +9,7 @@ public partial class WidgetSettings : ISettings
 {
     public WidgetSettings()
     {
-        ActiveWidgetSystemNames = new List<string>();
+        ActiveWidgetSystemNames = [];
     }
 
     /// <summary>

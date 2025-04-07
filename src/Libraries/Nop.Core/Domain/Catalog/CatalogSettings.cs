@@ -9,8 +9,8 @@ public partial class CatalogSettings : ISettings
 {
     public CatalogSettings()
     {
-        ProductSortingEnumDisabled = new List<int>();
-        ProductSortingEnumDisplayOrder = new Dictionary<int, int>();
+        ProductSortingEnumDisabled = [];
+        ProductSortingEnumDisplayOrder = [];
     }
 
     /// <summary>

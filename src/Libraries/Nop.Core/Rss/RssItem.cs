@@ -111,7 +111,7 @@ public partial class RssItem
     /// <summary>
     /// Element extensions
     /// </summary>
-    public List<XElement> ElementExtensions { get; } = new List<XElement>();
+    public List<XElement> ElementExtensions { get; } = [];
 
     #endregion
 }

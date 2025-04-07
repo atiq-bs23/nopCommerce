@@ -1,4 +1,4 @@
-using FluentMigrator;
+﻿using FluentMigrator;
 using FluentMigrator.Expressions;
 using FluentMigrator.Infrastructure;
 
@@ -11,7 +11,7 @@ public class NullMigrationContext : IMigrationContext
 {
     public IServiceProvider ServiceProvider { get; set; }
 
-    public ICollection<IMigrationExpression> Expressions { get; set; } = new List<IMigrationExpression>();
+    public ICollection<IMigrationExpression> Expressions { get; set; } = [];
 
     public IQuerySchema QuerySchema { get; set; }
 #pragma warning disable 612

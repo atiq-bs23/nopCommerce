@@ -7,7 +7,7 @@ public partial class AdditionalTokensAddedEvent
 {
     public AdditionalTokensAddedEvent()
     {
-        AdditionalTokens = new List<string>();
+        AdditionalTokens = [];
     }
 
     /// <summary>

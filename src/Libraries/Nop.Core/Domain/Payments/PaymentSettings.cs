@@ -9,7 +9,7 @@ public partial class PaymentSettings : ISettings
 {
     public PaymentSettings()
     {
-        ActivePaymentMethodSystemNames = new List<string>();
+        ActivePaymentMethodSystemNames = [];
     }
 
     /// <summary>

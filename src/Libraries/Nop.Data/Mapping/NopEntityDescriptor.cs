@@ -4,7 +4,7 @@ public partial class NopEntityDescriptor
 {
     public NopEntityDescriptor()
     {
-        Fields = new List<NopEntityFieldDescriptor>();
+        Fields = [];
     }
 
     public string EntityName { get; set; }

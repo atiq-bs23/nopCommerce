@@ -12,7 +12,7 @@ public partial class ExternalAuthenticationSettings : ISettings
     /// </summary>
     public ExternalAuthenticationSettings()
     {
-        ActiveAuthenticationMethodSystemNames = new List<string>();
+        ActiveAuthenticationMethodSystemNames = [];
     }
 
     /// <summary>

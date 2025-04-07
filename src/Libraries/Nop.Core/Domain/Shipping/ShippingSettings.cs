@@ -9,8 +9,8 @@ public partial class ShippingSettings : ISettings
 {
     public ShippingSettings()
     {
-        ActiveShippingRateComputationMethodSystemNames = new List<string>();
-        ActivePickupPointProviderSystemNames = new List<string>();
+        ActiveShippingRateComputationMethodSystemNames = [];
+        ActivePickupPointProviderSystemNames = [];
     }
 
     /// <summary>

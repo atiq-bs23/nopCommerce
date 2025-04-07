@@ -436,7 +436,7 @@ public abstract partial class BaseDataProvider
         var command = new CommandInfo(dataConnection, procedureName, parameters);
 
         var rez = command.QueryProc<T>()?.ToList();
-        return Task.FromResult<IList<T>>(rez ?? new List<T>());
+        return Task.FromResult<IList<T>>(rez ?? []);
     }
 
     /// <summary>
@@ -452,7 +452,7 @@ public abstract partial class BaseDataProvider
     public virtual Task<IList<T>> QueryAsync<T>(string sql, params DataParameter[] parameters)
     {
         using var dataContext = CreateDataConnection();
-        return Task.FromResult<IList<T>>(dataContext.Query<T>(sql, parameters)?.ToList() ?? new List<T>());
+        return Task.FromResult<IList<T>>(dataContext.Query<T>(sql, parameters)?.ToList() ?? []);
     }
 
     /// <summary>

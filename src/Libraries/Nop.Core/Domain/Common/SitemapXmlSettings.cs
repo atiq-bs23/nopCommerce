@@ -9,7 +9,7 @@ public partial class SitemapXmlSettings : ISettings
 {
     public SitemapXmlSettings()
     {
-        SitemapCustomUrls = new List<string>();
+        SitemapCustomUrls = [];
     }
 
     /// <summary>

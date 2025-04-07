@@ -45,12 +45,12 @@ public partial class RssFeed
     /// <summary>
     /// Element extensions
     /// </summary>
-    public List<XElement> ElementExtensions { get; } = new List<XElement>();
+    public List<XElement> ElementExtensions { get; } = [];
 
     /// <summary>
     /// List of rss items
     /// </summary>
-    public List<RssItem> Items { get; set; } = new List<RssItem>();
+    public List<RssItem> Items { get; set; } = [];
 
     /// <summary>
     /// Title
