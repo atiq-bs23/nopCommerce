@@ -8,8 +8,8 @@ public partial record WishlistModel : BaseNopModel
 {
     public WishlistModel()
     {
-        Items = new List<ShoppingCartItemModel>();
-        Warnings = new List<string>();
+        Items = [];
+        Warnings = [];
     }
 
     public Guid CustomerGuid { get; set; }
@@ -38,8 +38,8 @@ public partial record WishlistModel : BaseNopModel
         public ShoppingCartItemModel()
         {
             Picture = new PictureModel();
-            AllowedQuantities = new List<SelectListItem>();
-            Warnings = new List<string>();
+            AllowedQuantities = [];
+            Warnings = [];
         }
 
         public string Sku { get; set; }

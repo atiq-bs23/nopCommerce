@@ -63,12 +63,12 @@ public partial class DefaultAsset : IAsset
     /// <summary>
     /// Gets a list of processors
     /// </summary>
-    public IList<IProcessor> Processors => new List<IProcessor>();
+    public IList<IProcessor> Processors => [];
 
     /// <summary>
     /// Gets the items collection for the asset
     /// </summary>
-    public IDictionary<string, object> Items => new Dictionary<string, object>();
+    public IDictionary<string, object> Items => [];
 
     /// <summary>
     /// Gets the route to the bundle output
@@ -78,7 +78,7 @@ public partial class DefaultAsset : IAsset
     /// <summary>
     /// Gets files to exclude from output results
     /// </summary>
-    public IList<string> ExcludeFiles => new List<string>();
+    public IList<string> ExcludeFiles => [];
 
     /// <summary>
     /// Gets the webroot relative source files

@@ -6,8 +6,8 @@ public partial record CheckoutPickupPointsModel : BaseNopModel
 {
     public CheckoutPickupPointsModel()
     {
-        Warnings = new List<string>();
-        PickupPoints = new List<CheckoutPickupPointModel>();
+        Warnings = [];
+        PickupPoints = [];
     }
 
     public IList<string> Warnings { get; set; }

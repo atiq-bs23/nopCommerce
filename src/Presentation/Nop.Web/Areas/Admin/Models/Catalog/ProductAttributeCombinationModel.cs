@@ -14,10 +14,10 @@ public partial record ProductAttributeCombinationModel : BaseNopEntityModel
 
     public ProductAttributeCombinationModel()
     {
-        ProductAttributes = new List<ProductAttributeModel>();
-        ProductPictureModels = new List<ProductPictureModel>();
-        Warnings = new List<string>();
-        PictureIds = new List<int>();
+        ProductAttributes = [];
+        ProductPictureModels = [];
+        Warnings = [];
+        PictureIds = [];
     }
 
     #endregion

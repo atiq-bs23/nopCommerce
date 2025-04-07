@@ -7,8 +7,8 @@ public partial record EstimateShippingModel : BaseNopModel
 {
     public EstimateShippingModel()
     {
-        AvailableCountries = new List<SelectListItem>();
-        AvailableStates = new List<SelectListItem>();
+        AvailableCountries = [];
+        AvailableStates = [];
     }
 
     public int RequestDelay { get; set; }
@@ -29,8 +29,8 @@ public partial record EstimateShippingResultModel : BaseNopModel
 {
     public EstimateShippingResultModel()
     {
-        ShippingOptions = new List<ShippingOptionModel>();
-        Errors = new List<string>();
+        ShippingOptions = [];
+        Errors = [];
     }
 
     public IList<ShippingOptionModel> ShippingOptions { get; set; }

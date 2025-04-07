@@ -10,14 +10,13 @@ public partial record ShoppingCartModel : BaseNopModel
 {
     public ShoppingCartModel()
     {
-        Items = new List<ShoppingCartItemModel>();
-        Warnings = new List<string>();
+        Items = [];
+        Warnings = [];
         DiscountBox = new DiscountBoxModel();
         GiftCardBox = new GiftCardBoxModel();
-        CheckoutAttributes = new List<CheckoutAttributeModel>();
+        CheckoutAttributes = [];
         OrderReviewData = new OrderReviewDataModel();
-
-        ButtonPaymentMethodViewComponents = new List<Type>();
+        ButtonPaymentMethodViewComponents = [];
     }
 
     public bool OnePageCheckoutEnabled { get; set; }
@@ -51,8 +50,8 @@ public partial record ShoppingCartModel : BaseNopModel
         public ShoppingCartItemModel()
         {
             Picture = new PictureModel();
-            AllowedQuantities = new List<SelectListItem>();
-            Warnings = new List<string>();
+            AllowedQuantities = [];
+            Warnings = [];
         }
 
         public string Sku { get; set; }
@@ -97,8 +96,8 @@ public partial record ShoppingCartModel : BaseNopModel
     {
         public CheckoutAttributeModel()
         {
-            AllowedFileExtensions = new List<string>();
-            Values = new List<CheckoutAttributeValueModel>();
+            AllowedFileExtensions = [];
+            Values = [];
         }
 
         public string Name { get; set; }
@@ -147,8 +146,8 @@ public partial record ShoppingCartModel : BaseNopModel
     {
         public DiscountBoxModel()
         {
-            AppliedDiscountsWithCodes = new List<DiscountInfoModel>();
-            Messages = new List<string>();
+            AppliedDiscountsWithCodes = [];
+            Messages = [];
         }
 
         public List<DiscountInfoModel> AppliedDiscountsWithCodes { get; set; }
@@ -176,7 +175,7 @@ public partial record ShoppingCartModel : BaseNopModel
             BillingAddress = new AddressModel();
             ShippingAddress = new AddressModel();
             PickupAddress = new AddressModel();
-            CustomValues = new Dictionary<string, object>();
+            CustomValues = [];
         }
         public bool Display { get; set; }
 

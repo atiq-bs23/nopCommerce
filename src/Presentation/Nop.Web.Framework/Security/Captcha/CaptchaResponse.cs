@@ -11,7 +11,7 @@ public partial class CaptchaResponse
 
     public CaptchaResponse()
     {
-        Errors = new List<string>();
+        Errors = [];
     }
 
     #endregion

@@ -7,9 +7,9 @@ public partial record CustomerOrderListModel : BaseNopModel
 {
     public CustomerOrderListModel()
     {
-        Orders = new List<OrderDetailsModel>();
-        RecurringOrders = new List<RecurringOrderModel>();
-        RecurringPaymentErrors = new List<string>();
+        Orders = [];
+        RecurringOrders = [];
+        RecurringPaymentErrors = [];
     }
 
     public IList<OrderDetailsModel> Orders { get; set; }

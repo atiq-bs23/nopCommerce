@@ -7,8 +7,8 @@ public partial record CheckoutShippingMethodModel : BaseNopModel
 {
     public CheckoutShippingMethodModel()
     {
-        ShippingMethods = new List<ShippingMethodModel>();
-        Warnings = new List<string>();
+        ShippingMethods = [];
+        Warnings = [];
     }
 
     public IList<ShippingMethodModel> ShippingMethods { get; set; }

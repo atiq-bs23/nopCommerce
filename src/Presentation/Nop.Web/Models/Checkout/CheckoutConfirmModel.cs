@@ -6,7 +6,7 @@ public partial record CheckoutConfirmModel : BaseNopModel
 {
     public CheckoutConfirmModel()
     {
-        Warnings = new List<string>();
+        Warnings = [];
     }
 
     public bool TermsOfServiceOnOrderConfirmPage { get; set; }

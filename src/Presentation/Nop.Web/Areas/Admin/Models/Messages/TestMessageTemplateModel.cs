@@ -7,7 +7,7 @@ public partial record TestMessageTemplateModel : BaseNopEntityModel
 {
     public TestMessageTemplateModel()
     {
-        Tokens = new List<string>();
+        Tokens = [];
     }
 
     public int LanguageId { get; set; }

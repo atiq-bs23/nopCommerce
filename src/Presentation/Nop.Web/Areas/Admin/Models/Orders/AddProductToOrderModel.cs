@@ -14,9 +14,9 @@ public partial record AddProductToOrderModel : BaseNopModel
 
     public AddProductToOrderModel()
     {
-        ProductAttributes = new List<ProductAttributeModel>();
+        ProductAttributes = [];
         GiftCard = new GiftCardModel();
-        Warnings = new List<string>();
+        Warnings = [];
     }
 
     #endregion
@@ -68,8 +68,8 @@ public partial record AddProductToOrderModel : BaseNopModel
     {
         public ProductAttributeModel()
         {
-            AllowedFileExtensions = new List<string>();
-            Values = new List<ProductAttributeValueModel>();
+            AllowedFileExtensions = [];
+            Values = [];
         }
 
         public int ProductAttributeId { get; set; }

@@ -6,8 +6,8 @@ public partial record BlogPostModel : BaseNopEntityModel
 {
     public BlogPostModel()
     {
-        Tags = new List<string>();
-        Comments = new List<BlogCommentModel>();
+        Tags = [];
+        Comments = [];
         AddNewComment = new AddBlogCommentModel();
     }
 

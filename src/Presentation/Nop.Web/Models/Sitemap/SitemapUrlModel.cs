@@ -19,7 +19,7 @@ public partial record SitemapUrlModel : BaseNopModel
     public SitemapUrlModel(string location, IList<string> alternateLocations, UpdateFrequency frequency, DateTime updatedOn)
     {
         Location = location;
-        AlternateLocations = alternateLocations ?? new List<string>();
+        AlternateLocations = alternateLocations ?? [];
         UpdateFrequency = frequency;
         UpdatedOn = updatedOn;
     }

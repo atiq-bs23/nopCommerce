@@ -215,8 +215,8 @@ public partial record ProductDetailsModel : BaseNopEntityModel
     {
         public ProductAttributeModel()
         {
-            AllowedFileExtensions = new List<string>();
-            Values = new List<ProductAttributeValueModel>();
+            AllowedFileExtensions = [];
+            Values = [];
         }
 
         public int ProductId { get; set; }

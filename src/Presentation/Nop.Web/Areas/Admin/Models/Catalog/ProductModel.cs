@@ -16,44 +16,44 @@ public partial record ProductModel : BaseNopEntityModel,
 
     public ProductModel()
     {
-        ProductPictureModels = new List<ProductPictureModel>();
-        ProductVideoModels = new List<ProductVideoModel>();
-        Locales = new List<ProductLocalizedModel>();
+        ProductPictureModels = [];
+        ProductVideoModels = [];
+        Locales = [];
         CopyProductModel = new CopyProductModel();
         AddPictureModel = new ProductPictureModel();
         AddVideoModel = new ProductVideoModel();
-        ProductWarehouseInventoryModels = new List<ProductWarehouseInventoryModel>();
+        ProductWarehouseInventoryModels = [];
         ProductEditorSettingsModel = new ProductEditorSettingsModel();
         StockQuantityHistory = new StockQuantityHistoryModel();
 
-        AvailableBasepriceUnits = new List<SelectListItem>();
-        AvailableBasepriceBaseUnits = new List<SelectListItem>();
-        AvailableProductTemplates = new List<SelectListItem>();
-        AvailableTaxCategories = new List<SelectListItem>();
-        AvailableDeliveryDates = new List<SelectListItem>();
-        AvailableProductAvailabilityRanges = new List<SelectListItem>();
-        AvailableWarehouses = new List<SelectListItem>();
-        ProductsTypesSupportedByProductTemplates = new Dictionary<int, IList<SelectListItem>>();
+        AvailableBasepriceUnits = [];
+        AvailableBasepriceBaseUnits = [];
+        AvailableProductTemplates = [];
+        AvailableTaxCategories = [];
+        AvailableDeliveryDates = [];
+        AvailableProductAvailabilityRanges = [];
+        AvailableWarehouses = [];
+        ProductsTypesSupportedByProductTemplates = [];
 
-        AvailableVendors = new List<SelectListItem>();
+        AvailableVendors = [];
 
-        SelectedStoreIds = new List<int>();
-        AvailableStores = new List<SelectListItem>();
+        SelectedStoreIds = [];
+        AvailableStores = [];
 
-        SelectedManufacturerIds = new List<int>();
-        AvailableManufacturers = new List<SelectListItem>();
+        SelectedManufacturerIds = [];
+        AvailableManufacturers = [];
 
-        SelectedCategoryIds = new List<int>();
-        AvailableCategories = new List<SelectListItem>();
+        SelectedCategoryIds = [];
+        AvailableCategories = [];
 
-        SelectedCustomerRoleIds = new List<int>();
-        AvailableCustomerRoles = new List<SelectListItem>();
+        SelectedCustomerRoleIds = [];
+        AvailableCustomerRoles = [];
 
-        SelectedDiscountIds = new List<int>();
-        AvailableDiscounts = new List<SelectListItem>();
+        SelectedDiscountIds = [];
+        AvailableDiscounts = [];
 
-        AvailableProductTags = new List<SelectListItem>();
-        SelectedProductTags = new List<string>();
+        AvailableProductTags = [];
+        SelectedProductTags = [];
 
         RelatedProductSearchModel = new RelatedProductSearchModel();
         CrossSellProductSearchModel = new CrossSellProductSearchModel();

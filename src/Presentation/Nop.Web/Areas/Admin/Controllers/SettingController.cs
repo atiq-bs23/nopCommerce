@@ -1456,7 +1456,7 @@ public partial class SettingController : BaseAdminController
             //security settings
             var securitySettings = await _settingService.LoadSettingAsync<SecuritySettings>(storeScope);
             if (securitySettings.AdminAreaAllowedIpAddresses == null)
-                securitySettings.AdminAreaAllowedIpAddresses = new List<string>();
+                securitySettings.AdminAreaAllowedIpAddresses = [];
             securitySettings.AdminAreaAllowedIpAddresses.Clear();
             if (!string.IsNullOrEmpty(model.SecuritySettings.AdminAreaAllowedIpAddresses))
                 foreach (var s in model.SecuritySettings.AdminAreaAllowedIpAddresses.Split(_separator, StringSplitOptions.RemoveEmptyEntries))
