@@ -133,7 +133,7 @@ public partial class PluginManager<TPlugin> : IPluginManager<TPlugin> where TPlu
     public virtual async Task<IList<TPlugin>> LoadActivePluginsAsync(List<string> systemNames, Customer customer = null, int storeId = 0)
     {
         if (systemNames == null)
-            return new List<TPlugin>();
+            return [];
 
         //get loaded plugins according to passed system names
         return (await LoadAllPluginsAsync(customer, storeId))

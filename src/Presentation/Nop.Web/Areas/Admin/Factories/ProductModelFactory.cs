@@ -919,7 +919,7 @@ public partial class ProductModelFactory : IProductModelFactory
             model.ProductsTypesSupportedByProductTemplates.Add((int)productType, new List<SelectListItem>());
             foreach (var template in productTemplates)
             {
-                var list = (IList<int>)TypeDescriptor.GetConverter(typeof(List<int>)).ConvertFrom(template.IgnoredProductTypes) ?? new List<int>();
+                var list = (IList<int>)TypeDescriptor.GetConverter(typeof(List<int>)).ConvertFrom(template.IgnoredProductTypes) ?? [];
                 if (string.IsNullOrEmpty(template.IgnoredProductTypes) || !list.Contains((int)productType))
                 {
                     model.ProductsTypesSupportedByProductTemplates[(int)productType].Add(new SelectListItem

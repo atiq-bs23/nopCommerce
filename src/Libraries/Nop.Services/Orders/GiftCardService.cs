@@ -150,7 +150,7 @@ public partial class GiftCardService : IGiftCardService
     public virtual async Task<IList<GiftCard>> GetGiftCardsByPurchasedWithOrderItemIdAsync(int purchasedWithOrderItemId)
     {
         if (purchasedWithOrderItemId == 0)
-            return new List<GiftCard>();
+            return [];
 
         var query = _giftCardRepository.Table;
         query = query.Where(gc => gc.PurchasedWithOrderItemId.HasValue && gc.PurchasedWithOrderItemId.Value == purchasedWithOrderItemId);

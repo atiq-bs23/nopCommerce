@@ -740,7 +740,7 @@ public partial class ShoppingCartService : IShoppingCartService
         ArgumentNullException.ThrowIfNull(product);
 
         if (!cart.Any())
-            return new List<Product>();
+            return [];
 
         var productIds = cart.Select(ci => ci.ProductId).ToArray();
 

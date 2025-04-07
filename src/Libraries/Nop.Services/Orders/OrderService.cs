@@ -537,7 +537,7 @@ public partial class OrderService : IOrderService
     public virtual async Task<IList<OrderItem>> GetOrderItemsAsync(int orderId, bool? isNotReturnable = null, bool? isShipEnabled = null, int vendorId = 0)
     {
         if (orderId == 0)
-            return new List<OrderItem>();
+            return [];
 
         return await (from oi in _orderItemRepository.Table
             join p in _productRepository.Table on oi.ProductId equals p.Id
@@ -795,7 +795,7 @@ public partial class OrderService : IOrderService
     public virtual async Task<IList<OrderNote>> GetOrderNotesByOrderIdAsync(int orderId, bool? displayToCustomer = null)
     {
         if (orderId == 0)
-            return new List<OrderNote>();
+            return [];
 
         var query = _orderNoteRepository.Table.Where(on => on.OrderId == orderId);
 

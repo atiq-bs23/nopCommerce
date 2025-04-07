@@ -423,7 +423,7 @@ public partial class PermissionService : IPermissionService
 
         var configs = _typeFinder.FindClassesOfType<IPermissionConfigManager>()
             .Select(configType => (IPermissionConfigManager)Activator.CreateInstance(configType))
-            .SelectMany(config => config?.AllConfigs ?? new List<PermissionConfig>())
+            .SelectMany(config => config?.AllConfigs ?? [])
             .Where(c => !exists.Contains(c.SystemName))
             .ToList();
 

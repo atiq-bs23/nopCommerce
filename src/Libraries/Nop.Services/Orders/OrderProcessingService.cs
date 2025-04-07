@@ -2027,7 +2027,7 @@ public partial class OrderProcessingService : IOrderProcessingService
 
         var initialOrder = await _orderService.GetOrderByIdAsync(recurringPayment.InitialOrderId);
         if (initialOrder == null)
-            return new List<string> { "Initial order could not be loaded" };
+            return ["Initial order could not be loaded"];
 
         var request = new CancelRecurringPaymentRequest();
         CancelRecurringPaymentResult result = null;

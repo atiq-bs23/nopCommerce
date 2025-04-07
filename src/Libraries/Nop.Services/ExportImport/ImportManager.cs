@@ -3439,7 +3439,7 @@ public partial class ImportManager : IImportManager
         public CategoryKey(string key, Category category = null, List<int> storesIds = null)
         {
             Key = key.Trim();
-            StoresIds = storesIds ?? new List<int>();
+            StoresIds = storesIds ?? [];
             Category = category;
         }
 

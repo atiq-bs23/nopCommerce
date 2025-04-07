@@ -715,10 +715,7 @@ public partial class ExportManager : IExportManager
                 attribute.ValidationFileMaximumSize = pam.ValidationFileMaximumSize;
                 attribute.DefaultValue = pam.DefaultValue;
 
-                return new List<ExportProductAttribute>
-                {
-                    attribute
-                };
+                return [attribute];
             }).ToListAsync();
 
         if (!attributes.Any())

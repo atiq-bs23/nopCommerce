@@ -9,7 +9,7 @@ public partial class SitemapCreatedEvent
 
     public SitemapCreatedEvent(IList<SitemapUrlModel> sitemapUrls)
     {
-        SitemapUrls = sitemapUrls ?? new List<SitemapUrlModel>();
+        SitemapUrls = sitemapUrls ?? [];
     }
 
     #endregion

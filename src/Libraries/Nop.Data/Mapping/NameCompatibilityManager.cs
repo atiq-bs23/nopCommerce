@@ -30,7 +30,7 @@ public static partial class NameCompatibilityManager
 
             var typeFinder = Singleton<ITypeFinder>.Instance;
             var compatibilities = typeFinder.FindClassesOfType<INameCompatibility>()
-                ?.Select(type => EngineContext.Current.ResolveUnregistered(type) as INameCompatibility).ToList() ?? new List<INameCompatibility>();
+                ?.Select(type => EngineContext.Current.ResolveUnregistered(type) as INameCompatibility).ToList() ?? [];
 
             compatibilities.AddRange(AdditionalNameCompatibilities.Select(type => EngineContext.Current.ResolveUnregistered(type) as INameCompatibility));
 

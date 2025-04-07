@@ -200,7 +200,7 @@ public partial class ProductAttributeService : IProductAttributeService
             where pam.ProductId == productId
             select pam;
 
-        var attributes = await _staticCacheManager.GetAsync(allCacheKey, async () => await query.ToListAsync()) ?? new List<ProductAttributeMapping>();
+        var attributes = await _staticCacheManager.GetAsync(allCacheKey, async () => await query.ToListAsync()) ?? [];
 
         return attributes;
     }
@@ -360,7 +360,7 @@ public partial class ProductAttributeService : IProductAttributeService
             select pacp;
 
         var valuePictures = await _staticCacheManager.GetAsync(allCacheKey, async () => await query.ToListAsync())
-                            ?? new List<ProductAttributeValuePicture>();
+                            ?? [];
 
         return valuePictures;
     }
@@ -596,7 +596,7 @@ public partial class ProductAttributeService : IProductAttributeService
             select pacp;
 
         var combinationPictures = await _staticCacheManager.GetAsync(allCacheKey, async () => await query.ToListAsync()) 
-                                  ?? new List<ProductAttributeCombinationPicture>();
+                                  ?? [];
 
         return combinationPictures;
     }

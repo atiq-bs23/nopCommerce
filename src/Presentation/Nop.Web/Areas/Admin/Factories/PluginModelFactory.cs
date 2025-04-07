@@ -369,7 +369,7 @@ public partial class PluginModelFactory : IPluginModelFactory
                 SupportedVersions = plugin.SupportedVersions,
                 PictureUrl = plugin.PictureUrl,
                 Price = plugin.Price
-            }) ?? new List<OfficialFeedPluginModel>();
+            }) ?? [];
         });
 
         return model;

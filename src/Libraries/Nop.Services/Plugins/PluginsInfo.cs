@@ -315,11 +315,10 @@ public partial class PluginsInfo : IPluginsInfo
     /// <param name="pluginsInfo">Plugins info</param>
     public virtual void CopyFrom(IPluginsInfo pluginsInfo)
     {
-        InstalledPlugins = pluginsInfo.InstalledPlugins?.ToList() ?? new List<PluginDescriptorBaseInfo>();
+        InstalledPlugins = pluginsInfo.InstalledPlugins?.ToList() ?? [];
         PluginNamesToUninstall = pluginsInfo.PluginNamesToUninstall?.ToList() ?? [];
         PluginNamesToDelete = pluginsInfo.PluginNamesToDelete?.ToList() ?? [];
-        PluginNamesToInstall = pluginsInfo.PluginNamesToInstall?.ToList() ??
-                               new List<(string SystemName, Guid? CustomerGuid)>();
+        PluginNamesToInstall = pluginsInfo.PluginNamesToInstall?.ToList() ?? [];
         AssemblyLoadedCollision = pluginsInfo.AssemblyLoadedCollision?.ToList();
         PluginDescriptors = pluginsInfo.PluginDescriptors;
         IncompatiblePlugins = pluginsInfo.IncompatiblePlugins?.ToDictionary(item => item.Key, item => item.Value);

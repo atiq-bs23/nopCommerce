@@ -95,7 +95,7 @@ public partial class PaymentPluginManager : PluginManager<IPaymentMethod>, IPaym
 
         var settingKey = string.Format(NopPaymentDefaults.RestrictedCountriesSettingName, paymentMethod.PluginDescriptor.SystemName);
 
-        return await _settingService.GetSettingByKeyAsync<List<int>>(settingKey) ?? new List<int>();
+        return await _settingService.GetSettingByKeyAsync<List<int>>(settingKey) ?? [];
     }
 
     /// <summary>

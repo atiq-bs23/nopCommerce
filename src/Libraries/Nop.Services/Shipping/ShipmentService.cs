@@ -238,7 +238,7 @@ public partial class ShipmentService : IShipmentService
     public virtual async Task<IList<Shipment>> GetShipmentsByOrderIdAsync(int orderId, bool? shipped = null, bool? readyForPickup = null, int vendorId = 0)
     {
         if (orderId == 0)
-            return new List<Shipment>();
+            return [];
 
         var shipments = _shipmentRepository.Table;
 
