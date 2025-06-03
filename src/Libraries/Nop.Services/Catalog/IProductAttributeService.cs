@@ -177,21 +177,21 @@ public partial interface IProductAttributeService
     /// <summary>
     /// Deletes a list of product attribute value picture
     /// </summary>
-    /// <param name="value">Product attribute value pictures</param>
+    /// <param name="valuePictures">Product attribute value pictures</param>
     /// <returns>A task that represents the asynchronous operation</returns>
     Task DeleteProductAttributeValuePicturesAsync(IList<ProductAttributeValuePicture> valuePictures);
 
     /// <summary>
     /// Inserts a product attribute value picture
     /// </summary>
-    /// <param name="value">Product attribute value picture</param>
+    /// <param name="valuePicture">Product attribute value picture</param>
     /// <returns>A task that represents the asynchronous operation</returns>
     Task InsertProductAttributeValuePictureAsync(ProductAttributeValuePicture valuePicture);
 
     /// <summary>
     /// Updates a product attribute value picture
     /// </summary>
-    /// <param name="value">Product attribute value picture</param>
+    /// <param name="valuePicture">Product attribute value picture</param>
     /// <returns>A task that represents the asynchronous operation</returns>
     Task UpdateProductAttributeValuePictureAsync(ProductAttributeValuePicture valuePicture);
 
@@ -319,23 +319,23 @@ public partial interface IProductAttributeService
     #region Product attribute combination pictures
 
     /// <summary>
-    /// Deletes a product attribute combination picture
+    /// Deletes a list of product attribute combination picture
     /// </summary>
-    /// <param name="combination">Product attribute combination picture</param>
+    /// <param name="combinationPictures">Product attribute combination pictures</param>
     /// <returns>A task that represents the asynchronous operation</returns>
-    Task DeleteProductAttributeCombinationPictureAsync(ProductAttributeCombinationPicture combinationPicture);
+    Task DeleteProductAttributeCombinationPictureAsync(IList<ProductAttributeCombinationPicture> combinationPictures);
 
     /// <summary>
     /// Inserts a product attribute combination picture
     /// </summary>
-    /// <param name="combination">Product attribute combination picture</param>
+    /// <param name="combinationPicture">Product attribute combination picture</param>
     /// <returns>A task that represents the asynchronous operation</returns>
     Task InsertProductAttributeCombinationPictureAsync(ProductAttributeCombinationPicture combinationPicture);
 
     /// <summary>
     /// Updates a product attribute combination picture
     /// </summary>
-    /// <param name="combination">Product attribute combination picture</param>
+    /// <param name="combinationPicture">Product attribute combination picture</param>
     /// <returns>A task that represents the asynchronous operation</returns>
     Task UpdateProductAttributeCombinationPictureAsync(ProductAttributeCombinationPicture combinationPicture);
 

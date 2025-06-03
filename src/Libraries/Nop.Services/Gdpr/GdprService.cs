@@ -274,8 +274,7 @@ public partial class GdprService : IGdprService
 
         //back in stock subscriptions
         var backInStockSubscriptions = await _backInStockSubscriptionService.GetAllSubscriptionsByCustomerIdAsync(customer.Id);
-        foreach (var backInStockSubscription in backInStockSubscriptions)
-            await _backInStockSubscriptionService.DeleteSubscriptionAsync(backInStockSubscription);
+        await _backInStockSubscriptionService.DeleteSubscriptionAsync(backInStockSubscriptions);
 
         //product review
         var productReviews = await _productService.GetAllProductReviewsAsync(customer.Id);

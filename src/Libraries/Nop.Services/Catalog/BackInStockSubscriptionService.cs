@@ -48,6 +48,16 @@ public partial class BackInStockSubscriptionService : IBackInStockSubscriptionSe
     }
 
     /// <summary>
+    /// Delete a list of back in stock subscription
+    /// </summary>
+    /// <param name="subscriptions">Subscriptions</param>
+    /// <returns>A task that represents the asynchronous operation</returns>
+    public virtual async Task DeleteSubscriptionAsync(IList<BackInStockSubscription> subscriptions)
+    {
+        await _backInStockSubscriptionRepository.DeleteAsync(subscriptions);
+    }
+
+    /// <summary>
     /// Gets all subscriptions
     /// </summary>
     /// <param name="customerId">Customer identifier</param>
@@ -149,8 +159,7 @@ public partial class BackInStockSubscriptionService : IBackInStockSubscriptionSe
             result += (await _workflowMessageService.SendBackInStockNotificationAsync(subscription, customer?.LanguageId ?? 0)).Count;
         }
 
-        for (var i = 0; i <= subscriptions.Count - 1; i++)
-            await DeleteSubscriptionAsync(subscriptions[i]);
+        await DeleteSubscriptionAsync(subscriptions);
 
         return result;
     }
