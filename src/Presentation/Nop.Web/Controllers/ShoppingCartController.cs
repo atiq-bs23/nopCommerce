@@ -418,6 +418,11 @@ public partial class ShoppingCartController : BasePublicController
             case ShoppingCartType.ShoppingCart:
             default:
             {
+                //'Continue shopping' URL
+                await _genericAttributeService.SaveAttributeAsync(await _workContext.GetCurrentCustomerAsync(),
+                    NopCustomerDefaults.LastContinueShoppingPageAttribute,
+                    string.Empty,
+                    store.Id);
                 //activity log
                 await _customerActivityService.InsertActivityAsync("PublicStore.AddToShoppingCart",
                     string.Format(await _localizationService.GetResourceAsync("ActivityLog.PublicStore.AddToShoppingCart"), product.Name), product);
@@ -738,6 +743,13 @@ public partial class ShoppingCartController : BasePublicController
             case ShoppingCartType.ShoppingCart:
             default:
             {
+                var referrerPageUrl = _webHelper.GetUrlReferrer();
+                //'Continue shopping' URL
+                await _genericAttributeService.SaveAttributeAsync(await _workContext.GetCurrentCustomerAsync(),
+                    NopCustomerDefaults.LastContinueShoppingPageAttribute,
+                    referrerPageUrl,
+                    store.Id);
+
                 //activity log
                 await _customerActivityService.InsertActivityAsync("PublicStore.AddToShoppingCart",
                     string.Format(await _localizationService.GetResourceAsync("ActivityLog.PublicStore.AddToShoppingCart"), product.Name), product);
